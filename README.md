@@ -42,3 +42,6 @@ Press Home or Zoom → Zoom to Fit to view the full timing diagram
 <img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/162533ae-6622-4fbf-bb55-5d4801367134" />
 Media: FSM traffic light output on gtkwave
 
+<img width="1920" height="1080" alt="Screenshot 2025-12-12 195128" src="https://github.com/user-attachments/assets/4f2c94fa-d312-4ad4-8d05-6a8d279eb9de" />
+Media: FSM Colour coded traffic light output on gtkwave
+
