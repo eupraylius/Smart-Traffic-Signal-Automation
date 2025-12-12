@@ -40,5 +40,8 @@ Press Home or Zoom → Zoom to Fit to view the full timing diagram
 [Optional: Right-click → Radix → change to binary or unsigned]
 
 <img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/162533ae-6622-4fbf-bb55-5d4801367134" />
-Media: FSM traffic light output on gtkwave
+Media 1: FSM traffic light output on gtkwave
+
+<img width="1920" height="1080" alt="Screenshot 2025-12-12 195128" src="https://github.com/user-attachments/assets/93a0539e-20a2-4571-be7c-7c8febe0a89f" />
+Media 2: FSM Colour coded traffic light output on gtkwave
 
