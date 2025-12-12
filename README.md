@@ -1,6 +1,6 @@
 # Traffic-Management
 
-FSM traffic light output on gtkwave
+STEPS:
 
 1. Write the Traffic Light Module (traffic_light.v)
 
@@ -40,3 +40,5 @@ Press Home or Zoom → Zoom to Fit to view the full timing diagram
 [Optional: Right-click → Radix → change to binary or unsigned]
 
 <img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/162533ae-6622-4fbf-bb55-5d4801367134" />
+Media: FSM traffic light output on gtkwave
+
