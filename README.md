@@ -45,3 +45,6 @@ Media 1: FSM traffic light output on gtkwave
 <img width="1920" height="1080" alt="Screenshot 2025-12-12 195128" src="https://github.com/user-attachments/assets/93a0539e-20a2-4571-be7c-7c8febe0a89f" />
 Media 2: FSM Colour coded traffic light output on gtkwave
 
+<img width="1920" height="1080" alt="traffic v3" src="https://github.com/user-attachments/assets/783f5e21-145d-4384-aa4f-625775c8257e" />
+Media 3: Waveform – Normal, Pedestrian, Emergency & Parking Transitions
+
