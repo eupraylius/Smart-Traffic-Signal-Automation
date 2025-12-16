@@ -1,4 +1,38 @@
-# Traffic-Management
+## Traffic-Management
+
+---
+
+## Tools & Technologies Used
+
+<p align="center">
+  <a href="https://www.iverilog.org/">
+    <img src="https://skillicons.dev/icons?i=verilog" />
+  </a>
+  <a href="https://gtkwave.sourceforge.net/">
+    <img src="https://img.shields.io/badge/GTKWave-Waveform%20Viewer-blueviolet" />
+  </a>
+  <a href="https://github.com/">
+    <img src="https://skillicons.dev/icons?i=github" />
+  </a>
+  <a href="https://code.visualstudio.com/">
+    <img src="https://skillicons.dev/icons?i=vscode" />
+  </a>
+</p>
+
+---
+
+## Simulation & Verification
+
+- Testbench modules are used to simulate the traffic controller.
+- FSM behavior is verified using waveform outputs.
+- **GTKWave** is used to visualize state transitions and timing behavior.
+
+> Simulation output files (`.vcd`, `.out`) are generated during testing and are not required for version control.
+
+---
+
+```md
+![FSM Simulation Waveform](docs/simulation_waveform.png)
 
 STEPS:
 
@@ -38,6 +72,8 @@ red, yellow, green
 Press Home or Zoom → Zoom to Fit to view the full timing diagram
 
 [Optional: Right-click → Radix → change to binary or unsigned]
+
+## Sample Output
 
 <img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/162533ae-6622-4fbf-bb55-5d4801367134" />
 Media 1: FSM traffic light output on gtkwave
