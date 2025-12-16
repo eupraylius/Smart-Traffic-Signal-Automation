@@ -10,7 +10,7 @@
 | Simulation | Icarus Verilog | Compiling and running Verilog simulations |
 | Waveform Analysis | GTKWave | Visualizing FSM states and signal timing |
 | Version Control | Git & GitHub | Source code management and collaboration |
-| Development Environment | VS Code / Any Text Editor | Writing and editing HDL code |
+| Development Environment | Notepad++ / Any Text Editor | Writing and editing Verilog code |
 
 ---
 
