@@ -2,85 +2,94 @@
 
 ---
 
-## Tools & Technologies Used
+## Tools & Technology Stack
 
-<p align="center">
-  <a href="https://www.iverilog.org/">
-    <img src="https://skillicons.dev/icons?i=verilog" />
-  </a>
-  <a href="https://gtkwave.sourceforge.net/">
-    <img src="https://img.shields.io/badge/GTKWave-Waveform%20Viewer-blueviolet" />
-  </a>
-  <a href="https://github.com/">
-    <img src="https://skillicons.dev/icons?i=github" />
-  </a>
-  <a href="https://code.visualstudio.com/">
-    <img src="https://skillicons.dev/icons?i=vscode" />
-  </a>
-</p>
+| Category | Tool / Technology | Purpose |
+|--------|------------------|--------|
+| Hardware Description | Verilog HDL | FSM-based traffic signal controller design |
+| Simulation | Icarus Verilog | Compiling and running Verilog simulations |
+| Waveform Analysis | GTKWave | Visualizing FSM states and signal timing |
+| Version Control | Git & GitHub | Source code management and collaboration |
+| Development Environment | VS Code / Any Text Editor | Writing and editing HDL code |
 
 ---
 
 ## Simulation & Verification
 
-- Testbench modules are used to simulate the traffic controller.
-- FSM behavior is verified using waveform outputs.
-- **GTKWave** is used to visualize state transitions and timing behavior.
+The traffic signal controller is verified entirely through simulation.
 
-> Simulation output files (`.vcd`, `.out`) are generated during testing and are not required for version control.
+- Dedicated testbench modules generate clock and reset signals.
+- FSM behavior is validated through waveform inspection.
+- GTKWave is used to analyze timing diagrams and signal correctness.
+
+> Simulation artifacts such as `.vcd` and `.out` files are generated during runtime and are excluded from version control.
 
 ---
 
-```md
-![FSM Simulation Waveform](docs/simulation_waveform.png)
+## Simulation Workflow
 
-STEPS:
+### 1. Traffic Light Module (`traffic_light.v`)
 
-1. Write the Traffic Light Module (traffic_light.v)
+- Implements a Finite State Machine (FSM)
+- States include:
+  - RED
+  - GREEN
+  - YELLOW
+- State duration is controlled using a counter
+- Output signals drive the traffic lights
 
-This module cycles through three states:
-RED
-GREEN
-YELLOW
-[A counter determines how long each state lasts.]
+---
 
-2. Write the Testbench (tb_traffic.v)
+### 2. Testbench (`tb_traffic.v`)
 
-This testbench generates:
-A 10 ns clock
-A reset pulse
-Waveform output (traffic.vcd) for GTKWave
+The testbench provides:
+- A 10 ns clock signal
+- A reset pulse for initialization
+- Waveform dumping for post-simulation analysis
 
-3. Compile the Verilog Code (Icarus Verilog)
+Generated output:
+- `traffic.vcd`
 
-Open a terminal in the project folder and run: iverilog -o traffic.out traffic_light.v tb_traffic.v
+---
 
-4. Run the Simulation: vvp traffic.out
-[This generates traffic.vcd, which contains all recorded waveform data.]
+### 3. Compile the Design
 
-5. Open the waveform in GTKWave: gtkwave traffic.vcd
+Run the following command in the project directory:
 
+```bash
+iverilog -o traffic.out traffic_light.v tb_traffic.v
+```
+
+### 4. Run the Simulation
+
+```bash
+vvp traffic.out
+```
+
+### 5. Waveform Analysis
+
+Open the waveform viewer:
+```bash
+gtkwave traffic.vcd
+```
 Inside GTKWave:
 Expand the tb_traffic module
-Double-click signals to add them to the waveform
+Add the following signals:
+```
 clk
 counter[3:0]
-light[1:0]
 state[1:0]
+light[1:0]
 red, yellow, green
+```
+Use Zoom → Zoom to Fit (or press Home) to view the full timing diagram
 
-Press Home or Zoom → Zoom to Fit to view the full timing diagram
+(Optional) Change signal radix via Right-click → Data Format
 
-[Optional: Right-click → Radix → change to binary or unsigned]
 
-## Sample Output
+### 6. Sample Output
 
-<img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/162533ae-6622-4fbf-bb55-5d4801367134" />
-Media 1: FSM traffic light output on gtkwave
+<img width="1920" height="1080" alt="traffic v1" src="https://github.com/user-attachments/assets/0fd51fc1-f5e9-4d5e-995d-19b9da5ecfa0" />
 
-<img width="1920" height="1080" alt="Screenshot 2025-12-12 195128" src="https://github.com/user-attachments/assets/93a0539e-20a2-4571-be7c-7c8febe0a89f" />
-Media 2: FSM Colour coded traffic light output on gtkwave
-
-<img width="1920" height="1080" alt="traffic v3" src="https://github.com/user-attachments/assets/783f5e21-145d-4384-aa4f-625775c8257e" />
-Media 3: Waveform – Normal, Pedestrian, Emergency & Parking Transitions
+<img width="1920" height="1080" alt="traffic v3" src="https://github.com/user-attachments/assets/c80da8bc-96a0-49c3-87ca-8063a79366fc" />
 
